@@ -5,6 +5,7 @@ public class Play {
     public static char array2[][] = new char[FIELD_SIZE][FIELD_SIZE];
     public boolean isCurrentPlayer1;
     public boolean doubleSign;
+    public boolean noWinner;
 
     Player player1 = new Player();
     Player player2 = new Player();
@@ -112,6 +113,17 @@ public class Play {
         }
             }
         return isWinner;
+    }
+
+    //проверка на ничью
+    public boolean checkNoWinner(){
+        for(int i = 0; i < FIELD_SIZE; i++){
+            for(int j = 0; j < FIELD_SIZE; j++){
+                if(array[i][j] == ' '){
+                    return false;}
+            }
+        }
+        return true;
     }
 
 }

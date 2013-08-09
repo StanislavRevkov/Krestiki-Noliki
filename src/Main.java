@@ -15,6 +15,12 @@ public class Main {
             do{
                 play.doubleSign = false;
                 play.isCurrentPlayer1 = true;
+                play.checkNoWinner();
+                if(play.checkNoWinner()){
+                    System.out.println("Ничья!");
+                    System.out.println("-= GAME OVER =-");
+                    return;
+                }
                 play.assignFieldInArray();
                 play.checkWinner();
                 play.createField();
@@ -28,6 +34,12 @@ public class Main {
                 do{
                     play.doubleSign = false;
                     play.isCurrentPlayer1 = false;
+
+                    if(play.checkNoWinner()){
+                        System.out.println("Ничья!");
+                        System.out.println("-= GAME OVER =-");
+                        return;
+                    }
                     play.assignFieldInArray();
                     play.checkWinner();
                     play.createField();
